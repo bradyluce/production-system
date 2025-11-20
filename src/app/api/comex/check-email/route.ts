@@ -143,7 +143,7 @@ export async function GET(request: NextRequest) {
     // Get sender email
     const headers = message.payload?.headers || [];
     const fromHeader = headers.find((h: any) => h.name === 'From');
-    const clientEmail = fromHeader?.value?.match(/<(.+)>/)?.pop() || fromHeader?.value;
+    const clientEmail = fromHeader?.value?.match(/<(.+)>/)?.pop() || fromHeader?.value || undefined;
 
     // Process PDF
     await processComexPDF(pdfPath, clientEmail);
