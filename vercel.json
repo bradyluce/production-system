@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/comex/check-email",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
